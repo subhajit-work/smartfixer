@@ -1,0 +1,20 @@
+<!-- common header show -->
+<common-header></common-header>
+<ion-content>
+  <div class="main-content" *ngIf="totalPrice">
+    <section id="calculated-price">
+      <div class="calculated-price">
+        <h3 class="main-title">
+            Calculated Price
+        </h3>
+        <p class="price">{{totalPrice}} <span>INR</span></p>
+        <p class="links"><a (click)="myBackButton()" class="link">Check Features</a></p>
+        <div class="button btn">
+          <button class="btn btn-theme size-big" [routerLink]="['../my-order']" (click)="placeOrder()">Place your Order</button>
+        </div>
+      </div>
+    </section>
+  </div>
+ </ion-content>
+ <!-- common footer show -->
+<common-footer></common-footer> 

@@ -1,0 +1,128 @@
+<!-- common header start -->
+<common-header></common-header>
+<!-- common header end -->
+
+<ion-content *ngIf="OrderReturnData">
+  <section id="form_box">
+    <div class="form_box register_start">
+      <div class="form">
+        <form action="">
+          <ion-grid>
+            <ion-row>
+              <div class="flex-content">
+                <div class="details-inner">
+                  <h3>Order ID - {{OrderReturnData?.order_number}}</h3>
+                  <p>Date - {{OrderReturnData?.order_date}}</p>
+                  <div class="d-flex">
+                    <div><h2>&#8377;{{OrderReturnData?.order_amount}}</h2></div>
+                    <div class="track-link">
+                      <a href="https://{{OrderReturnData?.tracking_link}}" target="_blank">Track link</a>
+                    </div>
+                  </div>
+                  <p class="order-status">
+                    Order status:
+                    <span *ngIf="OrderReturnData?.order_status == 1">Pending</span>
+                    <span *ngIf="OrderReturnData?.order_status == 2">Process</span>
+                    <span *ngIf="OrderReturnData?.order_status == 3">Complete</span>
+                    <span *ngIf="OrderReturnData?.order_status == 4">Canceled</span>
+                  </p>
+                </div>
+              </div>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-list>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Panel Type</p>
+                      <div>
+                      <h3 >{{OrderReturnData?.paneltypeArr?.size}}</h3>
+                      <h3>&#8377;{{OrderReturnData?.paneltypeArr?.price}} </h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Cabinet Type</p>
+                      <div>
+                      <h3>{{OrderReturnData?.cabinetArr?.size}}</h3>
+                      <h3>&#8377;{{OrderReturnData?.cabinetArr?.price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Circuit Type</p>
+                      <div>
+                        <h3>{{OrderReturnData?.circuitArr?.size}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.circuitArr?.price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>RAM/ROM</p>
+                      <div>
+                        <h3>{{OrderReturnData?.storageArr?.size}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.storageArr?.price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Sound Output</p>
+                      <div>
+                        <h3>{{OrderReturnData?.soundArr?.size}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.soundArr?.price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Remote Type</p>
+                      <div>
+                        <h3>{{OrderReturnData?.remoteArr?.size}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.remoteArr?.price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>PCB</p>
+                      <div>
+                        <h3>{{OrderReturnData?.pcbArr?.pcb_name}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.pcbArr?.pcb_price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Bluetooth</p>
+                      <div>
+                        <h3>{{OrderReturnData?.bluetoothArr?.blutooth_name}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.bluetoothArr?.bluetooth_price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item class="pb-10 pr-16">
+                    <ion-label class="order-details">
+                      <p>Warranty</p>
+                      <div>
+                        <h3>{{OrderReturnData?.warrantyArr?.warranty_title}}</h3>
+                        <h3>&#8377;{{OrderReturnData?.warrantyArr?.warranty_price}}</h3>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+<!-- common footer start -->
+<common-footer></common-footer>
+<!-- common footer end -->

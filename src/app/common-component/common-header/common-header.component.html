@@ -1,0 +1,8 @@
+<ion-header>
+  <ion-buttons slot="start" (click)="toggleMenu()">  
+    <ion-menu-button auto-hide="false" ></ion-menu-button>
+  </ion-buttons>
+  <div>
+    <p class="welcometxt" *ngIf="getUserDetails"><span>Welcome</span>   <span class="name">{{getUserDetails.name}}</span></p>
+  </div>
+</ion-header>

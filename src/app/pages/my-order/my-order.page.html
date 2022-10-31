@@ -1,0 +1,74 @@
+<!-- common header start -->
+<common-header></common-header>
+<!-- common header end -->
+
+<ion-content>
+  <div class="main-content my-order">
+    <div class="order-content" 
+      matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color" *ngFor="let data of myOrderReturnData">
+      <div class="order-inner" id="{{data.id}}">
+        <h3 (click)="goToOrderDetails(this.id)">Order id : {{data.order_number}}</h3>
+        <p (click)="goToOrderDetails(this.id)">Order Date : {{data.created_at | date:'dd MMM yyy'}} <i>|</i> {{data.created_at | date:'h:mm a '}}</p>
+        <div (click)="goToOrderDetails(this.id)" class="d-flex">
+          <div><h2>&#8377;{{data.order_total}}</h2></div>
+          <div class="track-link">
+            <a href="https://{{data.order_track_link}}" target="_blank">Track link</a>
+            <!-- <a (click)="goToLink(data.order_track_link)">Track link</a> -->
+          </div>
+        </div>
+        <p (click)="goToOrderDetails(this.id)" class="order-status">
+          Order status:
+          <span *ngIf="data.order_status == 1">Pending</span>
+          <span *ngIf="data.order_status == 2">Process</span>
+          <span *ngIf="data.order_status == 3">Complete</span>
+          <span *ngIf="data.order_status == 4">Canceled</span>
+        </p>
+      </div>
+    </div>
+    <!-- <div class="order-content" [routerLink]="['/', 'order-details']"
+    matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color">
+      <div class="order-inner">
+        <h3>Order ID - 099993778</h3>
+        <p>Date - 30-08-2022</p>
+        <div class="d-flex">
+          <div><h2>&#8377;120000</h2></div>
+          <div class="track-link">
+            <ion-button>Track</ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-content" [routerLink]="['/', 'order-details']"
+    matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color">
+      <div class="order-inner">
+        <h3>Order ID - 099993778</h3>
+        <p>Date - 30-08-2022</p>
+        <div class="d-flex">
+          <div><h2>&#8377;120000</h2></div>
+          <div class="track-link">
+            <ion-button>Track</ion-button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</ion-content>
+
+<!-- common footer start -->
+<common-footer></common-footer>
+<!-- common footer end -->

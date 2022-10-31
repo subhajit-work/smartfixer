@@ -1,0 +1,81 @@
+<!-- common header start -->
+<common-header></common-header>
+<!-- common header end -->
+
+<ion-content>
+  <div class="main-content">
+    <section id="form_box">
+      <div class="form_box register_start">
+        <h3 class="main-title">
+          CREATE AN ACCOUNT
+        </h3>
+        <div class="form">
+          <form action="" #register = "ngForm" (ngSubmit)="onregister(register)">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input required matInput name="user_name" [(ngModel)]="model.user_name" placeholder="Enter Your Name">
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Date of birth</mat-label>
+                    <input (change)="changeDateFormat('birth_date', model.birth_date)" matInput placeholder="Date of birth" type="date" name="birth_date" [(ngModel)]="model.birth_date" required>
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Email ID</mat-label>
+                    <input required matInput name="user_email" [(ngModel)]="model.user_email" placeholder="Enter Email id" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" email>
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Mobile No.</mat-label>
+                    <input required matInput type="tel" minlength="10"maxlength="10" name="user_phone" [(ngModel)]="mobile" placeholder="Enter Mobile Number">
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Pin Code</mat-label>
+                    <input required matInput name="user_pincode" [(ngModel)]="model.user_pincode" placeholder="Enter Pin code">
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <textarea required matInput name="user_address" [(ngModel)]="model.user_address" placeholder="Enter Your Address" rows="3"></textarea>
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input required matInput type="password" name="pass_word" [(ngModel)]="model.pass_word" placeholder="Enter Your Password">
+                  </mat-form-field>
+                </ion-col>
+                <ion-col size="12">
+                  <button class="btn btn-theme size-big" type="submit" >Sign Up</button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <div class="pt-20">
+                    <h3>Already Have An Account?<a [routerLink]="['../auth']">&nbsp;Sign In</a></h3>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</ion-content>
+
+<!-- common footer start -->
+<common-footer></common-footer>
+<!-- common footer end -->

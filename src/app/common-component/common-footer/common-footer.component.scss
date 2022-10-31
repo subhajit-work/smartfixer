@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@300;400;500&display=swap');
+// var(--ion-color-theme1): #143BA8;
+ion-footer
+{
+    // padding: 15px 0;
+    .copyright_by
+    {
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        font-weight: 500;
+        // margin-bottom: 15px;
+        // padding-top: 6px;
+        .logo
+        {
+            padding: 10px 0 0 0;
+            img
+            {
+                width: 133px;
+                object-fit: contain;
+                height: 50px;
+            }
+        }
+        h3
+        {
+            color: var(--ion-color-theme1);
+            margin-bottom: 0;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            line-height: 18px;
+            font-size: 15px;
+        }
+        p
+        {
+            font-weight: 600;
+            color: rgb(112, 112, 112);
+            span
+            {
+                color: #034169;
+            } 
+        }
+    }
+    
+}
+.footer-md::before
+{
+    // display: none;
+}

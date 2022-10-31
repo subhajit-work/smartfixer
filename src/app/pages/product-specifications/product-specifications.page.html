@@ -1,0 +1,124 @@
+<!-- common header show -->
+<common-header></common-header>
+<ion-content>
+  <div class="main-content">
+    <section id="product-specifications">
+      <h3 class="main-title">
+          SELECT CONFIGURATION
+      </h3>
+      <div class="product-specifications formBox">
+        <form #loginModalForm="ngForm" (ngSubmit)="productChoose(loginModalForm)"  (keyup.enter)="productChoose(loginModalForm)"  novalidate>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Panel Type</mat-label>
+                  <mat-select required name="panaltype" [(ngModel)]="paneltype">
+                    <mat-option *ngFor="let panal of panelReturnData" [value]="panal">
+                      {{panal.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <!-- <div class="text">
+                  
+                  <span>IPS Panel : </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi.
+                </div> -->
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Cabinet Type</mat-label>
+                  <mat-select required name="cabinettype" [(ngModel)]="cabinettype">
+                    <mat-option *ngFor="let cabinet of cabinetReturnData" [value]="cabinet.id">
+                      {{cabinet.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Circuit Type</mat-label>
+                  <mat-select required name="cercuittype" [(ngModel)]="cercuittype">
+                    <mat-option *ngFor="let cercuit of cercuitReturnData" [value]="cercuit.id">
+                      {{cercuit.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select RAM/ROM</mat-label>
+                  <mat-select required name="ramlisttype" [(ngModel)]="ramlisttype">
+                    <mat-option *ngFor="let ramlist of ramlistReturnData" [value]="ramlist.id">
+                      {{ramlist.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Sound Output</mat-label>
+                  <mat-select required name="soundtype" [(ngModel)]="soundtype">
+                    <mat-option *ngFor="let sound of soundReturnData" [value]="sound.id">
+                      {{sound.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Remote Type</mat-label>
+                  <mat-select required name="remotelisttype" [(ngModel)]="remotelisttype">
+                    <mat-option *ngFor="let remotelist of remotelistReturnData" [value]="remotelist.id">
+                      {{remotelist.size}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select PCB</mat-label>
+                  <mat-select required name="pcbtype" [(ngModel)]="pcbtype">
+                    <mat-option *ngFor="let pcb of pcblistReturnData" [value]="pcb.id">
+                      {{pcb.pcb_name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Bluetooth</mat-label>
+                  <mat-select required name="bluetoothlisttype" [(ngModel)]="bluetoothlisttype">
+                    <mat-option *ngFor="let bluetoothlist of bluetoothlistReturnData" [value]="bluetoothlist.id">
+                      {{bluetoothlist.blutooth_name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select Warranty</mat-label>
+                  <mat-select required name="warrantylisttype" [(ngModel)]="warrantylisttype">
+                    <mat-option *ngFor="let warrantylist of warrantylistReturnData" [value]="warrantylist.id">
+                      {{warrantylist.warranty_title}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-col>
+              <ion-col size="12">
+                <div class="form-btn">
+                  <button [disabled]="!loginModalForm.valid" class="btn btn-theme size-big"  >Next</button>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </div>
+    </section>
+  </div>
+</ion-content>
+
+<!-- common footer show -->
+<common-footer></common-footer>
